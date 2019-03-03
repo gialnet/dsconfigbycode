@@ -1,14 +1,12 @@
 package com.vivaldispring.dsconfigbycode;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "users")
 public class Users {
@@ -16,7 +14,9 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @NonNull
     private String name;
+    @NonNull
     private String email;
 
 

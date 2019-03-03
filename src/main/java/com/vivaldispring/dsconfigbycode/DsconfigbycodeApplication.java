@@ -11,8 +11,8 @@ public class DsconfigbycodeApplication {
     @Bean
     public CommandLineRunner run(UserRepository userRepository) throws Exception {
         return (String[] args) -> {
-            Users user1 = new Users(0L,"John", "john@domain.com");
-            Users user2 = new Users(0L,"Julie", "julie@domain.com");
+            Users user1 = new Users("John", "john@domain.com");
+            Users user2 = new Users("Julie", "julie@domain.com");
             userRepository.save(user1);
             userRepository.save(user2);
             userRepository.findAll().forEach(user -> System.out.println(user));
